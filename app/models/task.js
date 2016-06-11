@@ -1,8 +1,9 @@
-import DS from 'ember-data';
+import Model from 'ember-data/model';
+import attr from 'ember-data/attr';
 
-export default DS.Model.extend({
-  title: DS.attr('string'),
-  description: DS.attr('string'),
-  complete: DS.attr('boolean'),
-  deadline: DS.attr('date')
+export default Model.extend({
+  title: attr('string'),
+  description: attr('string'),
+  complete: attr('boolean'),
+  deadline: attr('date')
 });
