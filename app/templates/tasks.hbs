@@ -1,1 +1,5 @@
-{{outlet}}
+<ul>
+  {{#each model as |task|}}
+    <li>{{task.title}}:{{task.description}}:{{task.complete}}:{{task.deadline}}</li>
+  {{/each}}
+</ul>
