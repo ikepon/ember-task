@@ -7,7 +7,7 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('tasks', { path: '/' }, function() {
-    this.route('edit');
+    this.route('edit', { path: '/:task_id/edit' });
   });
 });
 

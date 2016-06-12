@@ -2,7 +2,9 @@
   <div class="col-sm-4">
     <ul>
       {{#each model as |task|}}
-        <li>{{task.title}}:{{task.description}}:{{task.complete}}:{{task.deadline}}</li>
+        <li>
+          {{link-to task.title 'tasks.edit' task}}:{{task.description}}:{{task.complete}}:{{task.deadline}}
+        </li>
       {{/each}}
     </ul>
   </div>
