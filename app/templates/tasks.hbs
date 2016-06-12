@@ -4,7 +4,8 @@
     <ul>
       {{#each model as |task|}}
         <li>
-          {{link-to task.title 'tasks.edit' task}}:{{task.description}}:{{task.complete}}:{{task.deadline}}
+          {{link-to task.title 'tasks.edit' task}}
+          <button class="btn btn-danger btn-xs" {{action 'deleteTask' task}}>削除</button>
         </li>
       {{/each}}
     </ul>
