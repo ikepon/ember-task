@@ -7,7 +7,11 @@ export default Ember.Route.extend({
 
   actions: {
     deleteTask(task) {
-      task.destroyRecord();
+      let confirmation = confirm('削除しますか？');
+
+      if (confirmation) {
+        task.destroyRecord();
+      }
     }
   }
 });
