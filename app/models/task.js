@@ -5,5 +5,8 @@ export default Model.extend({
   title: attr('string'),
   description: attr('string'),
   complete: attr('boolean'),
-  deadline: attr('date')
+  deadline: attr('date'),
+
+  isValid: Ember.computed.notEmpty('title'),
+  isDisabled: Ember.computed.empty('title'),
 });

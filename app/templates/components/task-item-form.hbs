@@ -1,1 +1,20 @@
-{{yield}}
+<div class="form-horizontal">
+  <div class="form-group has-feedback {{ if item.isValid 'has-success'}}">
+    <label class="col-sm-2 control-label">Title*</label>
+    <div class="col-sm-10">
+      {{input type="text" value=item.title class="form-control" placeholder="タスク名を入れてください" autofocus="autofocus"}}
+      {{#if item.isValid}}<span class="glyphicon glyphicon-ok form-control-feedback"></span>{{/if}}
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">タスク詳細</label>
+    <div class="col-sm-10">
+      {{textarea class="form-control" placeholder="タスクの内容を入れてください。" rows="7" value=item.description}}
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-10 col-sm-offset-2">
+      <button class="btn btn-primary btn-lg btn-block" disabled={{item.isDisabled}} {{action 'buttonClicked' item}}>{{buttonLabel}}</button>
+    </div>
+  </div>
+</div>
