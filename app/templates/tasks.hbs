@@ -1,10 +1,17 @@
 <div class="row">
   <div class="col-sm-4">
     {{link-to 'タスク作成' 'tasks.new' class="btn btn-success"}}
-    <ul>
+    <ul class="list-unstyled">
       {{#each model as |task|}}
         <li>
           {{link-to task.title 'tasks.edit' task}}
+          [
+            {{#if task.deadline}}
+              {{moment-format task.deadline 'YYYY-MM-DD'}}
+            {{else}}
+              未設定
+            {{/if}}
+          ]
           <button class="btn btn-danger btn-xs" {{action 'deleteTask' task}}>削除</button>
         </li>
       {{/each}}
