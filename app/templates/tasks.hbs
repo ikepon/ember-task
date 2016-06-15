@@ -12,7 +12,9 @@
               未設定
             {{/if}}
           ]
-          <button class="btn btn-danger btn-xs" {{action 'deleteTask' task}}>削除</button>
+          <input type="checkbox" checked={{task.complete}} {{action 'toggleCheckBox' task}}>
+          {{task.complete}}
+          <button class="btn btn-danger btn-xs" {{action 'deleteTask' task.id}}>削除</button>
         </li>
       {{/each}}
     </ul>
